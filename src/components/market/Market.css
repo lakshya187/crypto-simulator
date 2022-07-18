@@ -43,7 +43,34 @@
     color: var(--lightGray);
 }
 .marketContainerRightContainer{
-    border-bottom: 1px solid var(--aboveSurface);
+    /* border-bottom: 1px solid var(--aboveSurface); */
 
     padding-bottom: 20px;
 }
+table {
+
+    border-collapse: collapse;
+    width: 100%;
+    /* margin-top: 250px; */
+  }
+  
+  td, th {
+    border-bottom: 1px solid var(--aboveSurface);
+    text-align: left;
+    padding: 8px;
+    color: var(--gray);
+    font-weight: 500;
+  }
+  
+  tr:nth-child(even) {
+    background-color: var(--aboveSurface);
+    color: var(--lightGray);
+  }
+  .coinNameAndImage img {
+    width: 7%;
+    margin-right: 10px;
+  }
+  .coinNameAndImage{
+    display: flex;
+    align-items: center;
+  }
