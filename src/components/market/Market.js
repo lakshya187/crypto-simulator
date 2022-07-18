@@ -10,13 +10,15 @@ const Market = () => {
           <SideMenu />
         </div>
         <div className="marketContainerRight">
-          <div className="marketContainerRightHead">
-            <div className="marketContainerRightHeadContainer">
-              <div className="marketContainerRightHeading">Market</div>
-              <div className="marketContainerRightDate">10 jun 2022</div>
-            </div>
-            <div className="marketContainerRightSearch">
-              <input placeholder="Search for currencies" />
+          <div className="marketContainerRightContainer">
+            <div className="marketContainerRightHead">
+              <div className="marketContainerRightHeadContainer">
+                <div className="marketContainerRightHeading">Market</div>
+                <div className="marketContainerRightDate">10 jun 2022</div>
+              </div>
+              <div className="marketContainerRightSearch">
+                <input placeholder="Search for currencies" />
+              </div>
             </div>
           </div>
         </div>

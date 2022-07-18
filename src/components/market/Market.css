@@ -8,7 +8,7 @@
     flex: .8;
     margin-top: 50px;
     padding-bottom: 20px;
-    border-bottom: 1px solid var(--aboveSurface);
+    
 }
 .marketContainerRightHeading {
     font-size: var(--heading);
@@ -41,4 +41,9 @@
     box-shadow: var(--lightShadow);
     font-size: var(--bodyCopy);
     color: var(--lightGray);
+}
+.marketContainerRightContainer{
+    border-bottom: 1px solid var(--aboveSurface);
+
+    padding-bottom: 20px;
 }
