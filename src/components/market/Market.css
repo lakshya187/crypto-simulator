@@ -1,0 +1,44 @@
+.marketContainer {
+    display :flex;
+}
+.marketContainerLeft{
+    flex: .2;
+}
+.marketContainerRight{
+    flex: .8;
+    margin-top: 50px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--aboveSurface);
+}
+.marketContainerRightHeading {
+    font-size: var(--heading);
+    color: var(--lightGray);
+}
+.marketContainerRightDate {
+    color: var(--lightGray);
+    background-color: var(--primaryColor);
+    /* width: 7%; */
+    /* align-content: center; */
+    padding: 10px;
+    /* ali */
+    justify-content: center;
+    border-radius: 5px;
+}
+
+.marketContainerRightHead{
+    display: flex;
+    align-items: center;
+}
+.marketContainerRightSearch {
+    margin-left: 250px;
+}
+.marketContainerRightSearch input {
+    padding: 15px 15px;
+    width: 500px;
+    border: none;
+    background-color: var(--aboveSurface);
+    border-radius: 5px;
+    box-shadow: var(--lightShadow);
+    font-size: var(--bodyCopy);
+    color: var(--lightGray);
+}
