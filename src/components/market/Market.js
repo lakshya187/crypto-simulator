@@ -8,7 +8,7 @@ const Market = () => {
   const [page, setPage] = useState(1);
   const renderCoins = () => {
     if (!results) return <div>Loading</div>;
-    console.log(results);
+
     return results.map((el) => {
       return (
         <tr>
@@ -36,7 +36,7 @@ const Market = () => {
           },
         }
       );
-      console.log(data);
+
       setResults(data);
     } catch (e) {
       console.log(e);

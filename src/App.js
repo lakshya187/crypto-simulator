@@ -1,12 +1,19 @@
 import React from "react";
 import "./app.css";
-import SideMenu from "./components/sideMenu/sideMenu";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+
+import Login from "./components/login/login";
 import Market from "./components/market/Market";
+import Signup from "./components/signup/signup";
 const App = () => {
   return (
-    <div>
-      <Market />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="signup" element={<Signup />} />
+        <Route path="market" element={<Market />} />
+        <Route path="login" element={<Login />} />
+      </Routes>
+    </BrowserRouter>
   );
 };
 

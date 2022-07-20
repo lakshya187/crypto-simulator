@@ -16,10 +16,16 @@
     margin-left: 20px;
 }
 .sideMenuTopBadge{
-    padding: 20px;
+    /* padding: 20px; */
+    height: 50px;
+    width: 50px;
+
     color: var(--lightGray);
     background-color: var(--primaryColor);
     border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
 }
 .sideMenuTopName{
@@ -46,4 +52,9 @@
 }
 .sideMenuBody{
     margin-top: 50px;
+}
+
+.active {
+ background-color: var(--surface);
+
 }
