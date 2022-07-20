@@ -2,16 +2,18 @@ import React, { useState, useEffect } from "react";
 import SideMenu from "../sideMenu/sideMenu";
 import "./Market.css";
 import axios from "axios";
+import BuyingModal from "../buyingModal/buyingModal";
 
 const Market = () => {
   const [results, setResults] = useState(null);
   const [page, setPage] = useState(1);
+  const [user, setUser] = useState(null);
   const renderCoins = () => {
     if (!results) return <div>Loading</div>;
 
     return results.map((el) => {
       return (
-        <tr>
+        <tr key={el.id}>
           <td className="coinNameAndImage">
             <img src={el.image} /> {el.name}
           </td>
@@ -19,7 +21,15 @@ const Market = () => {
           <td>₹{el.market_cap}</td>
           <td>₹{el.high_24h}</td>
           <td>{el.low_24h}</td>
-          <td>Buy Sell</td>
+          <td>
+            {!user ? null : (
+              <BuyingModal
+                coin={el.id}
+                funds={user.fundsAvailable}
+                price={el.current_price}
+              />
+            )}
+          </td>
         </tr>
       );
     });
@@ -46,12 +56,15 @@ const Market = () => {
     // setInterval(getResult(), 1500);
     getResult();
   }, []);
+  const getUser = (u) => {
+    setUser(u);
+  };
 
   return (
     <div className="market">
       <div className="marketContainer">
         <div className="marketContainerLeft">
-          <SideMenu />
+          <SideMenu getUser={getUser} />
         </div>
         <div className="marketContainerRight">
           <div className="marketContainerRightContainer">

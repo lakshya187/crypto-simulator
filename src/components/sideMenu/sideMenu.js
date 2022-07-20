@@ -13,7 +13,7 @@ import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 
-const SideMenu = (props) => {
+const SideMenu = ({ getUser }) => {
   const [user, setUser] = useState(null);
   const navigate = useNavigate();
   const [url, setUrl] = useState(null);
@@ -30,6 +30,7 @@ const SideMenu = (props) => {
         token,
       });
       setUser(data.user);
+      getUser(data.user);
     } catch (e) {
       navigate("/login", { replace: true });
       console.log(e);

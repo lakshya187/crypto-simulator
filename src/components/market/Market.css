@@ -49,22 +49,22 @@
 }
 table {
 
-    border-collapse: collapse;
-    width: 100%;
+    border-collapse: collapse!important;
+    width: 100%!important;
     /* margin-top: 250px; */
   }
   
   td, th {
-    border-bottom: 1px solid var(--aboveSurface);
-    text-align: left;
-    padding: 8px;
-    color: var(--gray);
-    font-weight: 500;
+    border-bottom: 1px solid var(--aboveSurface)!important;
+    text-align: left!important;
+    padding: 8px!important;
+    color: var(--gray)!important;
+    font-weight: 500!important;
   }
   
   tr:nth-child(even) {
-    background-color: var(--aboveSurface);
-    color: var(--lightGray);
+    background-color: var(--aboveSurface)!important;
+    color: var(--lightGray)!important;
   }
   .coinNameAndImage img {
     width: 7%;
