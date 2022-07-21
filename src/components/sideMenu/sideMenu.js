@@ -29,6 +29,7 @@ const SideMenu = ({ getUser }) => {
       const { data } = await axios.post(`${server_url}/api/user/verify`, {
         token,
       });
+      console.log(data);
       setUser(data.user);
       getUser(data.user);
     } catch (e) {
@@ -45,7 +46,7 @@ const SideMenu = ({ getUser }) => {
     removeToken();
     navigate("/login", { replace: true });
   };
-
+  console.log(user);
   if (!user) return <div>Loading...</div>;
   return (
     <div className="sideMenu">

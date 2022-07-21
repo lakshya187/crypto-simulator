@@ -9,7 +9,7 @@ body{
     --bodyCopy : 18px;
     --heading : 32px;
     --subHeading : 24px;
-    --breadCrums : 18px;
+    --breadCrums : 14px;
     --lightShadow : 0px 3px 6px rgba(0, 0,0,.1);
 }
 
@@ -34,18 +34,21 @@ input:focus, textarea:focus, select:focus{
     
 }
 .inputField input{
-    flex:  1;
-    border-radius: 5px;
-    border: none;
-    padding: 10px;
-    font-size: var(--bodyCopy);
-    margin-left: 30px;
+    flex:  1!important;
+    border-radius: 5px!important;
+    border: none!important;
+    padding: 10px!important;
+    font-size: var(--bodyCopy)!important;
+    margin-left: 30px!important;
+    color:  var(--lightGray)!important;
+    background-color: var(--gray)!important;
+    /* box-shadow: var(--gray); */
 
 }
 .inputField label{
-    color: var(--gray);
-    font-size: var(--bodyCopy);
-    text-align: right;
+    color: var(--gray)!important;
+    font-size: var(--bodyCopy)!important;
+    text-align: right!important;
 }
 .heading{
     color: var(--lightGray);
@@ -90,4 +93,14 @@ a {
 }
 a:hover{
     color:  var(--lightGray)!important;
+}
+.greenColor{
+    color: var(--green)!important;
+}
+.redColor { 
+    color: var(--red)!important;
+}
+.sellingModalDetials{
+    color: var(--gray);
+    font-size: var(--breadCrums);
 }
