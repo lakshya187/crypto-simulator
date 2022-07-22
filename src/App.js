@@ -5,6 +5,7 @@ import Portfolio from "./components/portfolio/portfolio";
 import Login from "./components/login/login";
 import Market from "./components/market/Market";
 import Signup from "./components/signup/signup";
+import Dashboard from "./components/dashboard/dashboard";
 const App = () => {
   return (
     <BrowserRouter>
@@ -13,6 +14,8 @@ const App = () => {
         <Route path="market" element={<Market />} />
         <Route path="login" element={<Login />} />
         <Route path="portfolio" element={<Portfolio />} />
+        <Route path="/" element={<Dashboard />} />
+        <Route path="dashboard" element={<Dashboard />} />
       </Routes>
     </BrowserRouter>
   );

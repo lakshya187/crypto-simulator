@@ -71,7 +71,9 @@ const Market = () => {
             <div className="marketContainerRightHead">
               <div className="marketContainerRightHeadContainer">
                 <div className="marketContainerRightHeading">Market</div>
-                <div className="marketContainerRightDate">10 jun 2022</div>
+                <div className="marketContainerRightDate">
+                  {new Date(Date.now()).toDateString()}
+                </div>
               </div>
             </div>
           </div>

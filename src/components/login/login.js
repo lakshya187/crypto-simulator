@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import { Link } from "react-router-dom";
 import { server_url } from "../../config";
 import axios from "axios";
 import { setToken } from "../../utility/localStorage";
@@ -13,7 +13,7 @@ const Login = () => {
     try {
       e.preventDefault();
       const data = { email, password };
-      console.log(data);
+      // console.log(data);
       const res = await axios.post(`${server_url}/api/user/log-in`, data);
       setToken(res.data.token);
       navigate("/market", { replace: true });
@@ -48,7 +48,9 @@ const Login = () => {
         <button className="btn primaryBtn" onClick={(e) => handleSubmit(e)}>
           Login
         </button>
-        <button className="btn secondryBtn marginLeft">Signup</button>
+        <Link to={"/signup"} className="btn secondryBtn marginLeft">
+          Signup
+        </Link>
       </div>
     </form>
   );

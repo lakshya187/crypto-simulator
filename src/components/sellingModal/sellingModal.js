@@ -6,7 +6,13 @@ import axios from "axios";
 import { server_url } from "../../config";
 import { getToken } from "../../utility/localStorage";
 import { Alert } from "@mui/material";
-const SellingModal = ({ currentPrice, trade, quantity, priceBought }) => {
+const SellingModal = ({
+  currentPrice,
+  trade,
+  quantity,
+  priceBought,
+  funds,
+}) => {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -23,6 +29,7 @@ const SellingModal = ({ currentPrice, trade, quantity, priceBought }) => {
           data: {
             quantity: qtyToSell,
             price: currentPrice,
+            funds,
           },
         },
         {
@@ -42,7 +49,6 @@ const SellingModal = ({ currentPrice, trade, quantity, priceBought }) => {
       console.log(e);
     }
   };
-  console.log(currentPrice);
 
   return (
     <>

@@ -79,7 +79,6 @@ class Portfolio extends Component {
   renderPortfolio = () => {
     if (this.state.sortedData) {
       return this.state.sortedData.map((el) => {
-        console.log(el);
         return (
           <tr key={el.id}>
             <td>{el.matchedTrade.name}</td>
@@ -106,8 +105,11 @@ class Portfolio extends Component {
             <td>{new Date(el.trade.openDate).toDateString()}</td>
             <td>₹{el.trade.profitLoss.toFixed(2)}</td>
             <td>
-              {!this.state.currentUser ? null : (
+              {el.trade.currentHoldings === 0 ? (
+                <div>Nothing left to sell!</div>
+              ) : (
                 <SellingModal
+                  funds={this.state.currentUser.fundsAvailable}
                   trade={el.trade._id}
                   currentPrice={el.matchedTrade.current_price}
                   priceBought={el.trade.buyingPrice}
@@ -120,8 +122,9 @@ class Portfolio extends Component {
       });
     }
     this.renderPortfolioData();
-    return <div>Loading</div>;
+    return <div style={{ color: "#fff" }}>No data to show</div>;
   };
+
   render() {
     return (
       <div className="market">
@@ -134,7 +137,9 @@ class Portfolio extends Component {
               <div className="marketContainerRightHead">
                 <div className="marketContainerRightHeadContainer">
                   <div className="marketContainerRightHeading">Portfolio</div>
-                  <div className="marketContainerRightDate">10 jun 2022</div>
+                  <div className="marketContainerRightDate">
+                    {new Date(Date.now()).toDateString()}
+                  </div>
                 </div>
               </div>
             </div>

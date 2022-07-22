@@ -3,7 +3,7 @@ import "./signup.css";
 import { server_url } from "../../config";
 import axios from "axios";
 import { setToken } from "../../utility/localStorage";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 const Signup = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -15,7 +15,7 @@ const Signup = () => {
     try {
       e.preventDefault();
       const data = { name, email, password, confirmPassword };
-      console.log(data);
+
       const res = await axios.post(`${server_url}/api/user/sign-up`, data);
       setToken(res.data.token);
       navigate("/market", { replace: true });
@@ -62,7 +62,9 @@ const Signup = () => {
         <button className="btn primaryBtn" onClick={(e) => handleSubmit(e)}>
           Submit
         </button>
-        <button className="btn secondryBtn marginLeft">Login</button>
+        <Link to={"/login"} className="btn secondryBtn marginLeft">
+          Login
+        </Link>
       </div>
     </form>
   );

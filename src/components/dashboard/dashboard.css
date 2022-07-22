@@ -1,0 +1,44 @@
+.dashboardStatsContainer{
+    display: flex;
+}
+.dashboardStatsLeft{
+    flex: .5;
+}
+.dashboardStatsRight{
+    flex: .5;
+}
+.dashboardStatsItemContainer{
+    display: flex;
+    flex-direction: column;
+}
+.dashboardStatsItem{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+}
+.dashboardStats{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--aboveSurface);
+    padding : 50px 0px;
+    border-radius: 15px;
+}
+.dashboardStatsDescription{
+    color: var(--gray);
+    font-size: var(--bodyCopy);
+}
+.dashboardStatsValue{
+    color: var(--lightGray);
+    margin-left: 100px;
+    font-size: var(--bodyCopy);
+    font-weight: bold;
+}
+.dashboardChart{
+    margin-top: 50px;
+    width: 50%;
+}
+.dashboardUserData{
+    width: 50%;
+}

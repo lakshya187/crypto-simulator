@@ -20,7 +20,7 @@ const SideMenu = ({ getUser }) => {
   const location = useLocation();
   const findUrl = () => {
     const currentUrl = location.pathname;
-    console.log(currentUrl);
+    // console.log(currentUrl);
   };
   const verify = async () => {
     try {
@@ -29,7 +29,7 @@ const SideMenu = ({ getUser }) => {
       const { data } = await axios.post(`${server_url}/api/user/verify`, {
         token,
       });
-      console.log(data);
+
       setUser(data.user);
       getUser(data.user);
     } catch (e) {
@@ -46,7 +46,7 @@ const SideMenu = ({ getUser }) => {
     removeToken();
     navigate("/login", { replace: true });
   };
-  console.log(user);
+
   if (!user) return <div>Loading...</div>;
   return (
     <div className="sideMenu">
@@ -70,10 +70,7 @@ const SideMenu = ({ getUser }) => {
             <img src={Portfolio} />
             <div>Portfolio</div>
           </Link>
-          <Link to={"/watchlist"} className="sideMenuBodyItem">
-            <img src={Watchlist} />
-            <div>Watchlist</div>
-          </Link>
+
           <div className="sideMenuBodyItem" onClick={() => handleLogout()}>
             <img src={Logout} />
             <div>Logout</div>
